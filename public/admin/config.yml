@@ -84,6 +84,24 @@ collections:
                 name: "name"
                 widget: "string"
                 hint: "Tag name for displaying on the site"
+      - name: "categories"
+        label: "Kategorier"
+        file: "meta/categories.yml"
+        description: "List of categories"
+        fields:
+          - name: categories
+            label: Kategorier
+            label_singular: "Kategori"
+            widget: list
+            fields:
+              - label: "Slug"
+                name: "slug"
+                widget: "string"
+                hint: "The part of a URL identifies the category"
+              - label: "Display Name"
+                name: "name"
+                widget: "string"
+                hint: "Category name for displaying on the site"
 
   - name: "posts"
     label: "Posts"
@@ -134,5 +152,47 @@ collections:
             - "tags.*.name"
           valueField: "tags.*.slug"
       - label: "Body"
+        name: "body"
+        widget: "markdown"
+
+  - name: "questions"
+    label: "Vanliga frågor"
+    folder: "content/questions/"
+    extension: "mdx"
+    format: "frontmatter"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: slug
+    summary: "{{question}}"
+    fields:
+      - label: "Slug"
+        name: "slug"
+        widget: "string"
+      - label: "Fråga"
+        name: "question"
+        widget: "string"
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        dateFormat: "YYYY-MM-DD"
+        timeFormat: false
+      - label: Categories
+        label_singular: "Category"
+        name: "categories"
+        widget: list
+        summary: "{{fields.category}}"
+        field:
+          label: Category
+          name: category
+          widget: relation
+          collection: "meta"
+          file: "categories"
+          searchFields:
+            - "categories.*.name"
+          displayFields:
+            - "categories.*.name"
+          valueField: "categories.*.slug"
+      - label: "Svar"
         name: "body"
         widget: "markdown"

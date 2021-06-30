@@ -29,6 +29,15 @@ export default function Navigation() {
               </a>
             </Link>
           </li>
+          <li>
+            <Link href="/vanliga-fragor">
+              <a
+                className={router.pathname === "vanliga-fragor" ? "active" : null}
+              >
+                Vanliga frågor
+              </a>
+            </Link>
+          </li>
         </ul>
         <style jsx>
           {`
