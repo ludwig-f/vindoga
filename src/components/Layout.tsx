@@ -34,6 +34,7 @@ export default function Layout({ children }: Props) {
             .root {
               display: flex;
               flex: 1 0 auto;
+              padding: 1rem 0;
             }
             main {
               flex: 1 0 auto;

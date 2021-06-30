@@ -11,10 +11,15 @@ export default function Index() {
       <div className="container">
         <div>
           <h1>
-            Hi, We're Next.js & Netlify<span className="fancy">.</span>
+            Välkommen till <span className="fancy">BRF Vindöga</span>
           </h1>
-          <span className="handle">@nextjs-netlify-blog</span>
-          <h2>A blog template with Next.js and Netlify.</h2>
+          <span className="handle"> - med havet som granne 🌅</span>
+          <p>
+            Vindöga ligger i Malmös mest spännande stadsdel, Västra Hamnen, där Malmö möter Öresund, längst ut vid havet.
+            Utanför dörren hittar du både härliga badmöjligheter, restauranger, butiker och stora grönområden och stränder.
+            Det är lätt att ta sig till Vindöga, antingen med bussen som stannar precis utanför eller med cykel.
+            Lägenheterna är ovanligt rymliga och ljusa med stora fönsterpartier.
+          </p>
           <SocialList />
         </div>
       </div>
@@ -31,13 +36,13 @@ export default function Index() {
           margin: 0;
           font-weight: 500;
         }
-        h2 {
-          font-size: 1.75rem;
+        p {
           font-weight: 400;
           line-height: 1.25;
+          max-width: 760px;
         }
         .fancy {
-          color: #15847d;
+          color: teal;
         }
         .handle {
           display: inline-block;
@@ -50,8 +55,8 @@ export default function Index() {
           h1 {
             font-size: 3rem;
           }
-          h2 {
-            font-size: 2.25rem;
+          p {
+            max-width: 890px;
           }
         }
       `}</style>

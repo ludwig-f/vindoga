@@ -17,6 +17,7 @@ export default function PostList({ posts, tags, pagination }: Props) {
   return (
     <div className={"container"}>
       <div className={"posts"}>
+        <h1>Aktuellt</h1>
         <ul className={"post-list"}>
           {posts.map((it, i) => (
             <li key={i}>

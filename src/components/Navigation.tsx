@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import Burger from "./Burger";
 import { useState } from "react";
 
@@ -10,10 +11,11 @@ export default function Navigation() {
     <>
       <Burger active={active} onClick={() => setActive(!active)} />
       <div className={"container " + (active ? "active" : "")}>
+        <Image className="logo" src="/images/logo.png" alt="Logga BRF Vindöga" width={665} height={220} layout="responsive" objectFit="contain"/>
         <ul>
           <li>
             <Link href="/">
-              <a className={router.pathname === "/" ? "active" : null}>about</a>
+              <a className={router.pathname === "/" ? "active" : null}>Hem</a>
             </Link>
           </li>
           <li>
@@ -23,7 +25,7 @@ export default function Navigation() {
                   router.pathname.startsWith("/posts") ? "active" : null
                 }
               >
-                blog
+                Aktuellt
               </a>
             </Link>
           </li>
@@ -40,6 +42,7 @@ export default function Navigation() {
               text-align: right;
               list-style: none;
               margin: 0;
+              margin-top: 15px;
               padding: 0;
               position: fixed;
               top: 0;
@@ -69,12 +72,12 @@ export default function Navigation() {
 
             @media (min-width: 769px) {
               .container {
-                width: 7rem;
+                width: 12rem;
                 display: block;
               }
               ul {
                 opacity: 1;
-                width: 7rem;
+                width: 12rem;
                 top: auto;
                 display: block;
                 transform: translateY(0);
