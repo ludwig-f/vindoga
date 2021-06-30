@@ -3,7 +3,6 @@ import authors from "../../meta/authors.yml";
 export type AuthorContent = {
   readonly slug: string;
   readonly name: string;
-  readonly introduction: string;
 };
 
 const authorMap: { [key: string]: AuthorContent } = generateAuthorMap();
