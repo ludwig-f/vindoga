@@ -35,11 +35,8 @@ collections:
               label: Keyword
               name: keyword
               widget: "string"
-          - label: "Twitter account"
-            name: "twitter_account"
-            widget: "string"
-          - label: "GitHub account"
-            name: "github_account"
+          - label: "Facebook group"
+            name: "facebook_group"
             widget: "string"
 
   - name: "meta"

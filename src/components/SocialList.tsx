@@ -1,26 +1,31 @@
-import React from "react";
-import Twitter from "../assets/twitter-alt.svg";
-import GitHub from "../assets/github-alt.svg";
+import React, { useState } from "react";
+import Image from "next/image";
+import Facebook from "../assets/svg/facebook-alt-bw.svg";
+import FacebookColor from "../assets/svg/facebook-alt-color.svg";
 import config from "../lib/config";
 
 export function SocialList({}) {
+  const [isHovering, setIsHovering] = useState(false)
+
   return (
     <div>
       <a
-        title="Twitter"
-        href={`https://twitter.com/${config.twitter_account}`}
+        title="Facebook"
+        href={`https://www.facebook.com/groups/${config.facebook_group}`}
         target="_blank"
         rel="noopener"
+        onMouseEnter={() => {
+          setIsHovering(true);
+        }}
+        onMouseLeave={() => {
+          setIsHovering(false);
+        }}
       >
-        <Twitter width={24} height={24} fill={"#222"} />
-      </a>
-      <a
-        title="GitHub"
-        href={`https://github.com/${config.github_account}`}
-        target="_blank"
-        rel="noopener"
-      >
-        <GitHub width={24} height={24} fill={"#222"} />
+        {
+          isHovering
+            ? <FacebookColor width={32} height={32} />
+            : <Facebook width={32} height={32} />
+        }
       </a>
       <style jsx>{`
         a {
