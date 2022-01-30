@@ -4,13 +4,13 @@
   "site_description": "BRF Vindögas hemsida",
   "site_keywords": [
     {
-      "keyword": "Next.js"
+      "keyword": "Vindöga"
     },
     {
-      "keyword": "Netlify"
+      "keyword": "BRF"
     },
     {
-      "keyword": "React"
+      "keyword": "BRF Vindöga"
     }
   ],
   "posts_per_page": 5,
