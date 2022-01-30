@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import Facebook from "../assets/svg/facebook-alt-bw.svg";
 import FacebookColor from "../assets/svg/facebook-alt-color.svg";
 import config from "../lib/config";
