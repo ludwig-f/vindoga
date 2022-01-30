@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import Facebook from "../assets/svg/facebook-alt-bw.svg";
-import FacebookColor from "../assets/svg/facebook-alt-color.svg";
 import config from "../lib/config";
+import FacebookLink from "./FacebookLink";
 
 export function SocialList({}) {
   const [isHovering, setIsHovering] = useState(false)
@@ -12,7 +11,7 @@ export function SocialList({}) {
         title="Facebook"
         href={`https://www.facebook.com/groups/${config.facebook_group}`}
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
         onMouseEnter={() => {
           setIsHovering(true);
         }}
@@ -20,11 +19,7 @@ export function SocialList({}) {
           setIsHovering(false);
         }}
       >
-        {
-          isHovering
-            ? <FacebookColor width={32} height={32} />
-            : <Facebook width={32} height={32} />
-        }
+        <FacebookLink active={isHovering} width={32} height={32} />
       </a>
       <style jsx>{`
         a {
