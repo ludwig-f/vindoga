@@ -1,4 +1,9 @@
-module.exports = ({
+const withImages = require('next-images');
+
+module.exports = withImages({
+  images: {
+    disableStaticImages: true
+  },
   pageExtensions: ["tsx"],
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.module.rules.push(
