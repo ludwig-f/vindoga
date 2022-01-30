@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import Burger from "./Burger";
 import { useState } from "react";
+import Logo from "../assets/images/logo.png";
 
 export default function Navigation() {
   const router = useRouter();
@@ -11,7 +11,7 @@ export default function Navigation() {
     <>
       <Burger active={active} onClick={() => setActive(!active)} />
       <div className={"container " + (active ? "active" : "")}>
-        <Image className="logo" src="/images/logo.png" alt="Logga BRF Vindöga" width={665} height={220} layout="responsive" objectFit="contain"/>
+        <img src={Logo} alt="Logga BRF Vindöga" style={{ objectFit: 'contain', width: '95%', marginLeft: '5%' }} />
         <ul>
           <li>
             <Link href="/">
